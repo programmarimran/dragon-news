@@ -22,7 +22,10 @@ const Router = createBrowserRouter([
         },
         {
             path:'/category/:id',
+            loader:()=>fetch('/news.json'),
+            errorElement:<p>error 4085</p>,
             element:<CategoryNews></CategoryNews>
+
         },
        ] 
     },
