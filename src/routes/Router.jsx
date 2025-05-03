@@ -3,8 +3,11 @@ import { createBrowserRouter } from 'react-router';
 import Root from '../layout/Root';
 import About from '../components/header/About/About';
 import Career from '../components/header/Career/Career';
-import Home from '../components/header/HomeLayout/Home';
 import CategoryNews from '../components/header/Pages/CategoryNews';
+import Login from '../components/header/Pages/Login';
+import Register from '../components/header/Pages/Register';
+import Home from '../components/header/Pages/Home';
+import AuthRoot from '../layout/AuthRoot';
 
 const Router = createBrowserRouter([
     {
@@ -28,6 +31,20 @@ const Router = createBrowserRouter([
 
         },
        ] 
+    },
+    {
+        path:'/auth',
+        element:<AuthRoot></AuthRoot>,
+        children:[
+            {
+                path:'/auth/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/auth/register',
+                element:<Register></Register>
+            },
+        ]
     },
    
     {
